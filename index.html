@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- SEO Meta Tags -->
+  <title>Micro Chill - AC Installation & Repair in Maldives | Same Day Service</title>
+  <meta name="description" content="Professional AC installation, repair & maintenance in Malé, Hulhumalé & Vilimalé. Same day service, 45 days warranty. New installation MVR 900, Full service MVR 800. Book now!" />
+  <meta name="keywords" content="AC repair Maldives, air conditioning installation Male, AC service Hulhumale, aircon repair Vilimale, AC technician Maldives, same day AC repair, Micro Chill" />
+  <meta name="author" content="Micro Chill" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://microchill.mv" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://microchill.mv" />
+  <meta property="og:title" content="Micro Chill - AC Installation & Repair in Maldives" />
+  <meta property="og:description" content="Professional AC services in Malé, Hulhumalé & Vilimalé. Same day service, 45 days warranty. Book your AC repair today!" />
+  <meta property="og:image" content="https://microchill.mv/og-image.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Micro Chill" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://microchill.mv" />
+  <meta property="twitter:title" content="Micro Chill - AC Installation & Repair in Maldives" />
+  <meta property="twitter:description" content="Professional AC services in Malé, Hulhumalé & Vilimalé. Same day service, 45 days warranty." />
+  <meta property="twitter:image" content="https://microchill.mv/twitter-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- TailwindCSS CDN (no build needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            chill: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6', // primary
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Simple gradient bg texture */
+    .bg-grid {
+      background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    /* Mobile optimizations */
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .mobile-full { grid-column: span 1; }
+    }
+    /* Input focus improvements */
+    input:focus, select:focus, textarea:focus {
+      transform: scale(1.02);
+      transition: all 0.2s ease;
+    }
+    /* Custom mobile navigation */
+    .mobile-nav {
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-nav.open {
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Micro Chill",
+    "image": "https://microchill.mv/logo.jpg",
+    "@id": "https://microchill.mv",
+    "url": "https://microchill.mv",
+    "email": "hello@micronet.mv",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Janavaree Hingun, near Dharubaaruge",
+      "addressLocality": "Malé",
+      "addressCountry": "MV"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 4.1755,
+      "longitude": 73.5093
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/microchill"
+    ],
+    "priceRange": "MVR 300-1500",
+    "description": "Professional air conditioning installation, repair and maintenance services in Maldives. Serving Malé, Hulhumalé and Vilimalé with same day service and 45 days warranty.",
+    "serviceArea": [
+      "Malé",
+      "Hulhumalé Phase 1",
+      "Hulhumalé Phase 2",
+      "Vilimalé"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AC Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "New AC Installation"
+          },
+          "price": "900",
+          "priceCurrency": "MVR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AC Full Service"
+          },
+          "price": "800",
+          "priceCurrency": "MVR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AC Removal"
+          },
+          "price": "300",
+          "priceCurrency": "MVR"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="bg-slate-950 text-white font-sans">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-950/60 bg-slate-950/80 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="p-2 rounded-xl bg-chill-500/20 ring-1 ring-white/10">
+          <!-- Snowflake icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-chill-400 group-hover:text-chill-300 transition-colors">
+            <path fill-rule="evenodd" d="M11 3a1 1 0 112 0v2.152l1.87-1.079a1 1 0 111 1.732L13 7.268V10h2.732l1.463-2.536a1 1 0 111.732 1L17.152 11H19a1 1 0 110 2h-1.848l1.775 3.07a1 1 0 01-1.732 1L15.732 14H13v2.732l2.195 1.267a1 1 0 11-1 1.732L13 18.848V21a1 1 0 11-2 0v-2.152l-1.87 1.079a1 1 0 11-1-1.732L11 16.732V14H8.268l-1.463 2.536a1 1 0 11-1.732-1L6.848 13H5a1 1 0 110-2h1.848L5.073 7.93a1 1 0 111.732-1L8.268 10H11V7.268L8.805 6a1 1 0 111-1.732L11 5.152V3z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div>
+          <div class="text-lg font-bold leading-none">Micro Chill</div>
+          <div class="text-xs text-white/60">We fix, you chill.</div>
+        </div>
+      </a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden sm:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:text-chill-300">About</a>
+        <a href="#pricing" class="hover:text-chill-300">Pricing</a>
+        <a href="#booking" class="px-3 py-1.5 rounded-lg bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold">Book Now</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="sm:hidden p-2 rounded-lg hover:bg-white/10">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="mobileMenu" class="mobile-nav fixed top-16 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur border-b border-white/10 sm:hidden">
+    <nav class="p-4 space-y-3">
+      <a href="#about" class="block py-2 hover:text-chill-300">About</a>
+      <a href="#pricing" class="block py-2 hover:text-chill-300">Pricing</a>
+      <a href="#booking" class="block py-2 px-3 rounded-lg bg-chill-500 text-slate-900 font-semibold text-center">Book Now</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-chill-900/40 via-slate-950 to-slate-950"></div>
+    <div class="absolute inset-0 bg-grid opacity-20"></div>
+    <div class="max-w-6xl mx-auto px-4 py-24 sm:py-28 relative">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+            Stay cool. <span class="text-chill-400">We handle the heat.</span>
+          </h1>
+          <p class="mt-5 text-white/70 text-lg max-w-prose">Micro Chill provides professional AC installation, repair, and maintenance across Malé, Hulhumalé & Vilimalé. Same day service, transparent pricing, and certified technicians with 45 days warranty.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#booking" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold shadow-lg shadow-chill-500/20">
+              <!-- calendar icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd" d="M6.75 2.25a.75.75 0 01.75.75V4.5h9V3a.75.75 0 011.5 0v1.5h.75A2.25 2.25 0 0121 6.75v10.5A2.25 2.25 0 0118.75 19.5H5.25A2.25 2.25 0 013 17.25V6.75A2.25 2.25 0 015.25 4.5H6V3a.75.75 0 01.75-.75zM4.5 9h15v8.25a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9z" clip-rule="evenodd" />
+              </svg>
+              Book a Service
+            </a>
+            <a href="#about" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5">
+              Learn more
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-chill-500/20 to-white/10 ring-1 ring-white/10 p-1">
+            <div class="w-full h-full rounded-2xl bg-slate-900/60 grid place-items-center text-center p-8">
+              <div>
+                <div class="text-7xl">❄️</div>
+                <p class="mt-4 text-white/70">Certified AC technicians in Maldives • Professional installations • Deep cleaning • Gas refilling • Emergency repairs • Same day service</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 sm:py-20 border-t border-white/10">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold">About Us</h2>
+      <p class="mt-4 text-white/70 leading-relaxed">At Micro Chill, we believe comfort shouldn't be complicated. Our certified technicians provide professional AC services across Maldives with clear communication and punctual service. Located at Janavaree Hingun near Dharubaaruge, we keep homes and offices cool all year with same day service and 45 days warranty.</p>
+      <div class="mt-8 grid sm:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-xl font-semibold text-chill-300 mb-4">🏝️ Service Areas</h3>
+          <ul class="space-y-2 text-white/70">
+            <li>• Hulhumalé Phase 1 & 2</li>
+            <li>• Malé City</li>
+            <li>• Vilimalé</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-chill-300 mb-4">⚡ Our Promise</h3>
+          <ul class="space-y-2 text-white/70">
+            <li>• Same day service available</li>
+            <li>• 45 days warranty on all services</li>
+            <li>• FREE re-visit if issues persist</li>
+            <li>• Book and reserve your slot</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 grid sm:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl bg-white/5 ring-1 ring-white/10">✅ Professional installation</div>
+        <div class="p-4 rounded-xl bg-white/5 ring-1 ring-white/10">✅ Preventive maintenance</div>
+        <div class="p-4 rounded-xl bg-white/5 ring-1 ring-white/10">✅ Emergency support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-16 sm:py-20 border-t border-white/10 bg-slate-900/40">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold">Service Pricing</h2>
+      <p class="mt-4 text-white/70 leading-relaxed">Transparent pricing with no hidden fees. All services include 45 days warranty.</p>
+
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+          <div class="text-lg font-semibold text-chill-300">New Installation</div>
+          <div class="text-2xl font-bold mt-1">MVR 900</div>
+          <div class="text-sm text-white/60 mt-2">Complete AC installation with setup</div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+          <div class="text-lg font-semibold text-chill-300">AC Full Service</div>
+          <div class="text-2xl font-bold mt-1">MVR 800</div>
+          <div class="text-sm text-white/60 mt-2">Deep cleaning & maintenance</div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+          <div class="text-lg font-semibold text-chill-300">AC Removal</div>
+          <div class="text-2xl font-bold mt-1">MVR 300</div>
+          <div class="text-sm text-white/60 mt-2">Safe removal and disconnection</div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+          <div class="text-lg font-semibold text-chill-300">Ceiling AC Service</div>
+          <div class="text-2xl font-bold mt-1">MVR 1,500</div>
+          <div class="text-sm text-white/60 mt-2">Complete ceiling unit service</div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+          <div class="text-lg font-semibold text-chill-300">AC Service (Indoor)</div>
+          <div class="text-2xl font-bold mt-1">MVR 500</div>
+          <div class="text-sm text-white/60 mt-2">Indoor unit cleaning only</div>
+        </div>
+
+        <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+          <div class="text-lg font-semibold text-chill-300">Gas Refill</div>
+          <div class="text-2xl font-bold mt-1">MVR 400 - 800</div>
+          <div class="text-sm text-white/60 mt-2">Half gas: 400 | Full gas: 800</div>
+        </div>
+      </div>
+
+      <div class="mt-8 p-4 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20">
+        <div class="text-emerald-300 font-semibold">🛡️ 45 Days Warranty</div>
+        <div class="text-white/70 text-sm mt-1">Free re-visit if any issues occur within warranty period</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section id="vision" class="py-16 sm:py-20 border-t border-white/10">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold">Our Vision</h2>
+      <p class="mt-4 text-white/70 leading-relaxed">To be Maldives' most trusted AC service brand by delivering transparent pricing, rapid response, and craftsmanship that lasts. We strive to make every visit a five‑star experience so you can focus on life while we handle the heat.</p>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section id="booking" class="py-16 sm:py-20 border-t border-white/10">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl sm:text-4xl font-bold">Book a Service</h2>
+      <p class="mt-4 text-white/70">Fill in your details and we’ll confirm your booking shortly.</p>
+
+      <form id="bookingForm" class="mt-8 form-grid grid sm:grid-cols-2 gap-4" method="POST">
+        <!-- Telegram Bot Integration -->
+
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Full Name *</label>
+          <input name="name" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="Your name" />
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Phone *</label>
+          <input name="phone" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="7xx xxxx / 9xx xxxx" />
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Email <span class="text-white/50">(Optional)</span></label>
+          <input type="email" name="email" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="you@email.com" />
+        </div>
+
+        <!-- Address Fields -->
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">House Name / Number *</label>
+          <input name="house" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="e.g., Blue Villa, H-123" />
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Road / Street *</label>
+          <input name="road" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="e.g., Majeedhee Magu, Road 1015" />
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Area / Island *</label>
+          <select name="area" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+            <option value="">Select area</option>
+            <option value="Male">Malé</option>
+            <option value="Hulhumale Phase 1">Hulhumalé Phase 1</option>
+            <option value="Hulhumale Phase 2">Hulhumalé Phase 2</option>
+            <option value="Vilimale">Vilimalé</option>
+          </select>
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Floor <span class="text-white/50">(Optional)</span></label>
+          <select name="floor" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+            <option value="">Select floor</option>
+            <option value="Ground Floor">Ground Floor</option>
+            <option value="1st Floor">1st Floor</option>
+            <option value="2nd Floor">2nd Floor</option>
+            <option value="3rd Floor">3rd Floor</option>
+            <option value="4th Floor">4th Floor</option>
+            <option value="5th Floor">5th Floor</option>
+            <option value="Other">Other (specify in notes)</option>
+          </select>
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Preferred Date *</label>
+          <input type="date" id="preferredDate" name="date" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" />
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Preferred Time Slot <span class="text-white/50">(Optional)</span></label>
+          <select name="timeSlot" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+            <option value="">Select time slot</option>
+            <option value="Morning (8:00 AM - 12:00 PM)">Morning (8:00 AM - 12:00 PM)</option>
+            <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12:00 PM - 4:00 PM)</option>
+            <option value="Evening (4:00 PM - 8:00 PM)">Evening (4:00 PM - 8:00 PM)</option>
+            <option value="Anytime">Anytime</option>
+          </select>
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">Service Type *</label>
+          <select name="service" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+            <option value="">Select service type</option>
+            <option value="New Installation (MVR 900)">New Installation (MVR 900)</option>
+            <option value="AC Full Service (MVR 800)">AC Full Service (MVR 800)</option>
+            <option value="AC Removal (MVR 300)">AC Removal (MVR 300)</option>
+            <option value="Ceiling AC Service (MVR 1500)">Ceiling AC Service (MVR 1,500)</option>
+            <option value="AC Service Indoor Only (MVR 500)">AC Service Indoor Only (MVR 500)</option>
+            <option value="Half Gas Refill (MVR 400)">Half Gas Refill (MVR 400)</option>
+            <option value="Full Gas Refill (MVR 800)">Full Gas Refill (MVR 800)</option>
+            <option value="Repair - Diagnosis Required">Repair - Diagnosis Required</option>
+          </select>
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">AC Brand <span class="text-white/50">(Optional)</span></label>
+          <select name="brand" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+            <option value="">Select brand</option>
+            <option value="Hitachi">Hitachi</option>
+            <option value="AUX">AUX</option>
+            <option value="Midea">Midea</option>
+            <option value="Daikin">Daikin</option>
+            <option value="Aiwa">Aiwa</option>
+            <option value="Hisense">Hisense</option>
+            <option value="Samsung">Samsung</option>
+            <option value="LG">LG</option>
+            <option value="Other">Other (specify in notes)</option>
+          </select>
+        </div>
+        <div class="sm:col-span-1">
+          <label class="block text-sm mb-1">AC Tonnage <span class="text-white/50">(Optional)</span></label>
+          <select name="tonnage" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+            <option value="">Select tonnage</option>
+            <option value="0.75 Ton">0.75 Ton</option>
+            <option value="1 Ton">1 Ton</option>
+            <option value="1.5 Ton">1.5 Ton</option>
+            <option value="2 Ton">2 Ton</option>
+            <option value="2.5 Ton">2.5 Ton</option>
+            <option value="3 Ton">3 Ton</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-sm mb-1">Additional Notes <span class="text-white/50">(Optional)</span></label>
+          <textarea name="notes" rows="3" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none resize-none" placeholder="Describe the issue, specific requirements, or any other details..."></textarea>
+        </div>
+        <div class="sm:col-span-2 flex items-center gap-2">
+          <input id="consent" type="checkbox" required class="w-4 h-4" />
+          <label for="consent" class="text-sm text-white/70">I agree to be contacted by Micro Chill to confirm my booking.</label>
+        </div>
+        <div class="sm:col-span-2">
+          <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold">Submit Booking</button>
+        </div>
+      </form>
+
+      <!-- Alert -->
+      <div id="alert" class="hidden mt-6 p-4 rounded-xl"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-white/10 bg-slate-900/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Business Info -->
+        <div>
+          <h3 class="text-lg font-semibold text-chill-300 mb-4">Micro Chill</h3>
+          <div class="space-y-2 text-white/70 text-sm">
+            <p>📍 Janavaree Hingun, near Dharubaaruge</p>
+            <p>Malé, Maldives</p>
+            <p>📧 <a href="mailto:hello@micronet.mv" class="hover:text-chill-300">hello@micronet.mv</a></p>
+          </div>
+        </div>
+
+        <!-- Service Areas -->
+        <div>
+          <h3 class="text-lg font-semibold text-chill-300 mb-4">Service Areas</h3>
+          <div class="space-y-1 text-white/70 text-sm">
+            <p>• Malé City</p>
+            <p>• Hulhumalé Phase 1 & 2</p>
+            <p>• Vilimalé</p>
+          </div>
+        </div>
+
+        <!-- Connect -->
+        <div>
+          <h3 class="text-lg font-semibold text-chill-300 mb-4">Connect With Us</h3>
+          <div class="flex items-center gap-4">
+            <a href="https://www.facebook.com/microchill" target="_blank" rel="noopener" class="p-2 rounded-lg bg-white/5 hover:bg-chill-500/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-blue-400">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#booking" class="px-4 py-2 rounded-lg bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold text-sm">
+              Book Service
+            </a>
+          </div>
+          <p class="mt-3 text-xs text-white/50">🛡️ 45 Days Warranty • Same Day Service</p>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-white/10 text-center text-sm text-white/50">
+        <p>© <span id="year"></span> Micro Chill. All rights reserved. • Professional AC Services in Maldives</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('preferredDate').setAttribute('min', today);
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    // Telegram Bot Integration
+    const form = document.getElementById('bookingForm');
+    const alertBox = document.getElementById('alert');
+    const BOT_TOKEN = '7846097297:AAEEvm6psj5QBncPV-8vb9Xbup1321WhNU0';
+    const CHAT_ID = '298353051';
+
+    async function sendToTelegram(formData) {
+      // Build address from components
+      const address = [
+        formData.get('house'),
+        formData.get('road'),
+        formData.get('area'),
+        formData.get('floor') ? `Floor: ${formData.get('floor')}` : ''
+      ].filter(Boolean).join(', ');
+
+      const message = `🆕 New Booking Request from MicroChill Website\n\n` +
+        `👤 Name: ${formData.get('name')}\n` +
+        `📞 Phone: ${formData.get('phone')}\n` +
+        `📧 Email: ${formData.get('email') || 'Not provided'}\n` +
+        `📍 Address: ${address}\n` +
+        `📅 Date: ${formData.get('date')}\n` +
+        `⏰ Time Slot: ${formData.get('timeSlot') || 'Anytime'}\n` +
+        `🔧 Service: ${formData.get('service')}\n` +
+        `❄️ AC Brand: ${formData.get('brand') || 'Not specified'}\n` +
+        `📊 Tonnage: ${formData.get('tonnage') || 'Not specified'}\n` +
+        `📝 Notes: ${formData.get('notes') || 'None'}`;
+
+      const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+      const response = await fetch(telegramUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: message,
+          parse_mode: 'HTML'
+        })
+      });
+
+      return response;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      alertBox.className = 'mt-6 p-4 rounded-xl bg-white/5 ring-1 ring-white/10 text-white/80';
+      alertBox.textContent = 'Submitting your booking...';
+      alertBox.classList.remove('hidden');
+
+      try {
+        const res = await sendToTelegram(data);
+
+        if (res.ok) {
+          alertBox.className = 'mt-6 p-4 rounded-xl bg-emerald-500/15 ring-1 ring-emerald-400/30 text-emerald-200';
+          alertBox.textContent = 'Thank you! Your booking request has been sent. We\'ll contact you to confirm.';
+          form.reset();
+        } else {
+          throw new Error('Failed to send message');
+        }
+      } catch (err) {
+        alertBox.className = 'mt-6 p-4 rounded-xl bg-rose-500/15 ring-1 ring-rose-400/30 text-rose-200';
+        alertBox.textContent = 'Sorry, something went wrong. Please try again or contact us directly.';
+        console.error('Telegram send error:', err);
+      }
+    });
+  </script>
+</body>
+</html>
