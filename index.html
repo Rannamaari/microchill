@@ -219,6 +219,10 @@
             Stay cool. <span class="text-chill-400">We handle the heat.</span>
           </h1>
           <p class="mt-5 text-white/70 text-lg max-w-prose">Micro Cool provides professional AC installation, repair, and maintenance across Malé, Hulhumalé & Vilimalé. Same day service, transparent pricing, and certified technicians with 45 days warranty.</p>
+
+          <div class="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-orange-500/20 ring-1 ring-orange-400/30">
+            <span class="text-orange-300 text-sm font-semibold">🔥 Introductory Pricing Available!</span>
+          </div>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="#booking" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold shadow-lg shadow-chill-500/20">
               <!-- calendar icon -->
@@ -227,8 +231,12 @@
               </svg>
               Book a Service
             </a>
-            <a href="#about" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5">
-              Learn more
+            <a href="tel:9996210" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/15 hover:bg-white/5">
+              <!-- phone icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.653.549 1.943 1.351l1.152 3.197c.239.668.065 1.422-.431 1.918l-1.293 1.293c-.32.32-.497.751-.497 1.201v.001c0 .47.176.925.497 1.257l4.5 4.5c.332.321.787.497 1.257.497h.001c.45 0 .881-.177 1.201-.497l1.293-1.293c.496-.496 1.25-.67 1.918-.431l3.197 1.152c.802.29 1.351 1.083 1.351 1.943V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+              </svg>
+              Call 9996210
             </a>
           </div>
         </div>
@@ -284,6 +292,17 @@
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-3xl sm:text-4xl font-bold">Service Pricing</h2>
       <p class="mt-4 text-white/70 leading-relaxed">Transparent pricing with no hidden fees. All services include 45 days warranty.</p>
+
+      <!-- Promotional Banner -->
+      <div class="mt-6 p-4 rounded-xl bg-gradient-to-r from-orange-500/20 to-red-500/20 ring-1 ring-orange-400/30">
+        <div class="flex items-center gap-3">
+          <div class="text-2xl">🔥</div>
+          <div>
+            <div class="text-orange-300 font-semibold">Limited Time Offer!</div>
+            <div class="text-white/80 text-sm">Introductory prices with special discounts available. Call 9996210 for current promotions!</div>
+          </div>
+        </div>
+      </div>
 
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
@@ -353,7 +372,7 @@
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Phone *</label>
-          <input name="phone" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="7xx xxxx / 9xx xxxx" />
+          <input type="tel" name="phone" required pattern="[0-9]{7,8}" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="7901234 or 9996210" inputmode="numeric" />
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Email <span class="text-white/50">(Optional)</span></label>
@@ -476,6 +495,7 @@
           <div class="space-y-2 text-white/70 text-sm">
             <p>📍 Janavaree Hingun, near Dharubaaruge</p>
             <p>Malé, Maldives</p>
+            <p>📞 <a href="tel:9996210" class="hover:text-chill-300 font-semibold">9996210</a> (Hotline)</p>
             <p>📧 <a href="mailto:hello@micronet.mv" class="hover:text-chill-300">hello@micronet.mv</a></p>
           </div>
         </div>
