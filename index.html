@@ -455,16 +455,18 @@
           </select>
         </div>
         <div class="sm:col-span-1">
-          <label class="block text-sm mb-1">AC Tonnage <span class="text-white/50">(Optional)</span></label>
-          <select name="tonnage" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
-            <option value="">Select tonnage</option>
-            <option value="0.75 Ton">0.75 Ton</option>
-            <option value="1 Ton">1 Ton</option>
-            <option value="1.5 Ton">1.5 Ton</option>
-            <option value="2 Ton">2 Ton</option>
-            <option value="2.5 Ton">2.5 Ton</option>
-            <option value="3 Ton">3 Ton</option>
-            <option value="Other">Other</option>
+          <label class="block text-sm mb-1">AC BTU <span class="text-white/50">(Optional)</span></label>
+          <select name="btu" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+            <option value="">Select BTU</option>
+            <option value="6000 BTU">6,000 BTU</option>
+            <option value="7000 BTU">7,000 BTU</option>
+            <option value="9000 BTU">9,000 BTU</option>
+            <option value="12000 BTU">12,000 BTU</option>
+            <option value="18000 BTU">18,000 BTU</option>
+            <option value="24000 BTU">24,000 BTU</option>
+            <option value="30000 BTU">30,000 BTU</option>
+            <option value="36000 BTU">36,000 BTU</option>
+            <option value="Other">Other (specify in notes)</option>
           </select>
         </div>
         <div class="sm:col-span-2">
@@ -587,7 +589,7 @@
         `⏰ Time Slot: ${formData.get('timeSlot') || 'Anytime'}\n` +
         `🔧 Service: ${formData.get('service')}\n` +
         `❄️ AC Brand: ${formData.get('brand') || 'Not specified'}\n` +
-        `📊 Tonnage: ${formData.get('tonnage') || 'Not specified'}\n` +
+        `📊 BTU: ${formData.get('btu') || 'Not specified'}\n` +
         `📝 Notes: ${formData.get('notes') || 'None'}`;
 
       const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
