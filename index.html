@@ -83,6 +83,61 @@
     .mobile-nav.open {
       transform: translateY(0);
     }
+    /* Popup modal styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .popup-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .popup-content {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      margin: 1rem;
+      position: relative;
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.3s ease;
+    }
+    .popup-overlay.show .popup-content {
+      transform: scale(1) translateY(0);
+    }
+    .popup-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+    .popup-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
   </style>
 
   <!-- Local Business Schema -->
@@ -168,6 +223,46 @@
   </script>
 </head>
 <body class="bg-slate-950 text-white font-sans">
+  <!-- Coming Soon Popup -->
+  <div id="comingSoonPopup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="popup-close" onclick="closePopup()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div class="text-center">
+        <div class="text-6xl mb-4">❄️</div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-chill-300 mb-4">Micro Cool is Coming Soon!</h2>
+
+        <div class="space-y-4 text-white/80">
+          <p class="text-lg">We're excited to announce that our professional AC services will be launching soon!</p>
+
+          <div class="p-4 rounded-xl bg-chill-500/20 ring-1 ring-chill-400/30">
+            <div class="text-chill-300 font-semibold text-lg">🗓️ Official Opening</div>
+            <div class="text-xl font-bold mt-1">October 15th, 2025</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-orange-500/20 ring-1 ring-orange-400/30">
+            <div class="text-orange-300 font-semibold">🔥 Early Bird Special!</div>
+            <div class="text-sm mt-1">Book now and get exclusive discounts on all services</div>
+          </div>
+
+          <p class="text-sm text-white/70">You can book your service appointment now to secure your slot and receive special launch pricing!</p>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#booking" onclick="closePopup()" class="px-6 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold transition-colors">
+            Book Service Now
+          </a>
+          <button onclick="closePopup()" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/5 transition-colors">
+            Continue Browsing
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Header -->
   <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-950/60 bg-slate-950/80 border-b border-white/10">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -571,6 +666,44 @@
     document.addEventListener('click', (e) => {
       if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
         mobileMenu.classList.remove('open');
+      }
+    });
+
+    // Coming Soon Popup functionality
+    const popup = document.getElementById('comingSoonPopup');
+
+    function showPopup() {
+      popup.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    function closePopup() {
+      popup.classList.remove('show');
+      document.body.style.overflow = 'auto'; // Restore scrolling
+      // Store in localStorage so popup doesn't show again in same session
+      localStorage.setItem('popupShown', 'true');
+    }
+
+    // Show popup on page load if not shown before
+    window.addEventListener('load', () => {
+      const popupShown = localStorage.getItem('popupShown');
+      if (!popupShown) {
+        // Delay popup slightly for better UX
+        setTimeout(showPopup, 500);
+      }
+    });
+
+    // Close popup when clicking outside content area
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        closePopup();
+      }
+    });
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && popup.classList.contains('show')) {
+        closePopup();
       }
     });
 
