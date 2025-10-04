@@ -33,6 +33,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <!-- TailwindCSS CDN (no build needed) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -574,6 +576,12 @@
           <input id="consent" type="checkbox" required class="w-4 h-4" />
           <label for="consent" class="text-sm text-white/70">I agree to be contacted by Micro Cool to confirm my booking.</label>
         </div>
+
+        <!-- reCAPTCHA -->
+        <div class="sm:col-span-2 flex justify-center">
+          <div class="g-recaptcha" data-sitekey="6LeFg94rAAAAALdjxsUvHx2y-8FMDTzuSeyRoPul" data-theme="dark"></div>
+        </div>
+
         <div class="sm:col-span-2">
           <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold">Submit Booking</button>
         </div>
@@ -732,7 +740,8 @@
         `🔧 Service: ${formData.get('service')}\n` +
         `❄️ AC Brand: ${formData.get('brand') || 'Not specified'}\n` +
         `📊 BTU: ${formData.get('btu') || 'Not specified'}\n` +
-        `📝 Notes: ${formData.get('notes') || 'None'}`;
+        `📝 Notes: ${formData.get('notes') || 'None'}\n` +
+        `🛡️ Verified: ✅ Human verified (reCAPTCHA passed)`;
 
       const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
@@ -753,6 +762,16 @@
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Check reCAPTCHA
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        alertBox.className = 'mt-6 p-4 rounded-xl bg-red-500/15 ring-1 ring-red-400/30 text-red-200';
+        alertBox.textContent = 'Please complete the reCAPTCHA verification.';
+        alertBox.classList.remove('hidden');
+        return;
+      }
+
       const data = new FormData(form);
 
       alertBox.className = 'mt-6 p-4 rounded-xl bg-white/5 ring-1 ring-white/10 text-white/80';
@@ -766,12 +785,14 @@
           alertBox.className = 'mt-6 p-4 rounded-xl bg-emerald-500/15 ring-1 ring-emerald-400/30 text-emerald-200';
           alertBox.textContent = 'Thank you! Your booking request has been sent. We\'ll contact you to confirm.';
           form.reset();
+          grecaptcha.reset(); // Reset reCAPTCHA after successful submission
         } else {
           throw new Error('Failed to send message');
         }
       } catch (err) {
         alertBox.className = 'mt-6 p-4 rounded-xl bg-rose-500/15 ring-1 ring-rose-400/30 text-rose-200';
         alertBox.textContent = 'Sorry, something went wrong. Please try again or contact us directly.';
+        grecaptcha.reset(); // Reset reCAPTCHA on error so user can retry
         console.error('Telegram send error:', err);
       }
     });
