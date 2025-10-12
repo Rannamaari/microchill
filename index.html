@@ -79,6 +79,24 @@
       transform: scale(1.02);
       transition: all 0.2s ease;
     }
+    /* Form input improvements for better visibility */
+    input, select, textarea {
+      background: rgba(255, 255, 255, 0.95) !important;
+      color: #0f172a !important;
+      border: 2px solid rgba(59, 130, 246, 0.3) !important;
+    }
+    input::placeholder, textarea::placeholder {
+      color: rgba(15, 23, 42, 0.5) !important;
+    }
+    input:focus, select:focus, textarea:focus {
+      background: rgba(255, 255, 255, 1) !important;
+      border-color: #3b82f6 !important;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+    }
+    label {
+      color: #e2e8f0 !important;
+      font-weight: 500;
+    }
     /* Custom mobile navigation */
     .mobile-nav {
       transform: translateY(-100%);
@@ -451,44 +469,62 @@
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
           <div class="text-lg font-semibold text-chill-300">New Installation</div>
-          <div class="text-2xl font-bold mt-1">MVR 900</div>
+          <div class="flex items-center gap-3 mt-1">
+            <div class="text-2xl font-bold text-emerald-400">MVR 750</div>
+            <div class="text-lg text-white/40 line-through">MVR 900</div>
+          </div>
           <div class="text-sm text-white/60 mt-2">Complete AC installation with setup</div>
         </div>
 
         <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
           <div class="text-lg font-semibold text-chill-300">AC Full Service</div>
-          <div class="text-2xl font-bold mt-1">MVR 800</div>
+          <div class="flex items-center gap-3 mt-1">
+            <div class="text-2xl font-bold text-emerald-400">MVR 650</div>
+            <div class="text-lg text-white/40 line-through">MVR 800</div>
+          </div>
           <div class="text-sm text-white/60 mt-2">Deep cleaning & maintenance</div>
         </div>
 
         <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
-          <div class="text-lg font-semibold text-chill-300">AC Removal</div>
-          <div class="text-2xl font-bold mt-1">MVR 300</div>
-          <div class="text-sm text-white/60 mt-2">Safe removal and disconnection</div>
+          <div class="text-lg font-semibold text-chill-300">Water Leak Fix</div>
+          <div class="text-2xl font-bold text-emerald-400 mt-1">MVR 250</div>
+          <div class="text-sm text-white/60 mt-2">Fix water leaking issues</div>
         </div>
 
         <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
-          <div class="text-lg font-semibold text-chill-300">Ceiling AC Service</div>
-          <div class="text-2xl font-bold mt-1">MVR 1,500</div>
-          <div class="text-sm text-white/60 mt-2">Complete ceiling unit service</div>
+          <div class="text-lg font-semibold text-chill-300">Relocation / Shift</div>
+          <div class="text-2xl font-bold text-emerald-400 mt-1">MVR 950</div>
+          <div class="text-sm text-white/60 mt-2">Move AC unit to new location</div>
         </div>
 
         <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
-          <div class="text-lg font-semibold text-chill-300">AC Service (Indoor)</div>
-          <div class="text-2xl font-bold mt-1">MVR 500</div>
+          <div class="text-lg font-semibold text-chill-300">Indoor Unit Servicing</div>
+          <div class="flex items-center gap-3 mt-1">
+            <div class="text-2xl font-bold text-emerald-400">MVR 350</div>
+            <div class="text-lg text-white/40 line-through">MVR 500</div>
+          </div>
           <div class="text-sm text-white/60 mt-2">Indoor unit cleaning only</div>
         </div>
 
         <div class="p-5 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
-          <div class="text-lg font-semibold text-chill-300">Gas Refill</div>
-          <div class="text-2xl font-bold mt-1">MVR 400 - 800</div>
-          <div class="text-sm text-white/60 mt-2">Half gas: 400 | Full gas: 800</div>
+          <div class="text-lg font-semibold text-chill-300">AC Unit Removal</div>
+          <div class="flex items-center gap-3 mt-1">
+            <div class="text-2xl font-bold text-emerald-400">MVR 200</div>
+            <div class="text-lg text-white/40 line-through">MVR 300</div>
+          </div>
+          <div class="text-sm text-white/60 mt-2">Safe removal and disconnection</div>
         </div>
       </div>
 
-      <div class="mt-8 p-4 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20">
-        <div class="text-emerald-300 font-semibold">🛡️ 45 Days Warranty</div>
-        <div class="text-white/70 text-sm mt-1">Free re-visit if any issues occur within warranty period</div>
+      <div class="mt-8 space-y-4">
+        <div class="p-4 rounded-xl bg-orange-500/20 ring-1 ring-orange-400/30">
+          <div class="text-orange-300 font-semibold">⏰ Promotional Pricing Valid Until December 31, 2025</div>
+          <div class="text-white/80 text-sm mt-1">Book now to secure these special discounted rates!</div>
+        </div>
+        <div class="p-4 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20">
+          <div class="text-emerald-300 font-semibold">🛡️ 45 Days Warranty</div>
+          <div class="text-white/70 text-sm mt-1">Free re-visit if any issues occur within warranty period</div>
+        </div>
       </div>
     </div>
   </section>
@@ -512,29 +548,29 @@
 
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Full Name *</label>
-          <input name="name" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="Your name" />
+          <input name="name" required class="w-full px-4 py-3 rounded-xl outline-none" placeholder="Your name" />
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Phone *</label>
-          <input type="tel" name="phone" required pattern="[0-9]{7,8}" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="7901234 or 9996210" inputmode="numeric" />
+          <input type="tel" name="phone" required pattern="[0-9]{7,8}" class="w-full px-4 py-3 rounded-xl outline-none" placeholder="7901234 or 9996210" inputmode="numeric" />
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Email <span class="text-white/50">(Optional)</span></label>
-          <input type="email" name="email" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="you@email.com" />
+          <input type="email" name="email" class="w-full px-4 py-3 rounded-xl outline-none" placeholder="you@email.com" />
         </div>
 
         <!-- Address Fields -->
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">House Name / Number *</label>
-          <input name="house" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="e.g., Blue Villa, H-123" />
+          <input name="house" required class="w-full px-4 py-3 rounded-xl outline-none" placeholder="e.g., Blue Villa, H-123" />
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Road / Street *</label>
-          <input name="road" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" placeholder="e.g., Majeedhee Magu, Road 1015" />
+          <input name="road" required class="w-full px-4 py-3 rounded-xl outline-none" placeholder="e.g., Majeedhee Magu, Road 1015" />
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Area / Island *</label>
-          <select name="area" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+          <select name="area" required class="w-full px-4 py-3 rounded-xl outline-none">
             <option value="">Select area</option>
             <option value="Male">Malé</option>
             <option value="Hulhumale Phase 1">Hulhumalé Phase 1</option>
@@ -544,7 +580,7 @@
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Floor <span class="text-white/50">(Optional)</span></label>
-          <select name="floor" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+          <select name="floor" class="w-full px-4 py-3 rounded-xl outline-none">
             <option value="">Select floor</option>
             <option value="Ground Floor">Ground Floor</option>
             <option value="1st Floor">1st Floor</option>
@@ -557,11 +593,11 @@
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Preferred Date *</label>
-          <input type="date" id="preferredDate" name="date" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none" />
+          <input type="date" id="preferredDate" name="date" required class="w-full px-4 py-3 rounded-xl outline-none" />
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Preferred Time Slot <span class="text-white/50">(Optional)</span></label>
-          <select name="timeSlot" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+          <select name="timeSlot" class="w-full px-4 py-3 rounded-xl outline-none">
             <option value="">Select time slot</option>
             <option value="Morning (8:00 AM - 12:00 PM)">Morning (8:00 AM - 12:00 PM)</option>
             <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12:00 PM - 4:00 PM)</option>
@@ -571,21 +607,22 @@
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">Service Type *</label>
-          <select name="service" required class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+          <select name="service" required class="w-full px-4 py-3 rounded-xl outline-none">
             <option value="">Select service type</option>
-            <option value="New Installation (MVR 900)">New Installation (MVR 900)</option>
-            <option value="AC Full Service (MVR 800)">AC Full Service (MVR 800)</option>
-            <option value="AC Removal (MVR 300)">AC Removal (MVR 300)</option>
-            <option value="Ceiling AC Service (MVR 1500)">Ceiling AC Service (MVR 1,500)</option>
-            <option value="AC Service Indoor Only (MVR 500)">AC Service Indoor Only (MVR 500)</option>
-            <option value="Half Gas Refill (MVR 400)">Half Gas Refill (MVR 400)</option>
-            <option value="Full Gas Refill (MVR 800)">Full Gas Refill (MVR 800)</option>
+            <option value="New Installation (MVR 750)">New Installation (MVR 750)</option>
+            <option value="AC Full Service (MVR 650)">AC Full Service (MVR 650)</option>
+            <option value="Water Leak Fix (MVR 250)">Water Leak Fix (MVR 250)</option>
+            <option value="Relocation / Shift (MVR 950)">Relocation / Shift (MVR 950)</option>
+            <option value="Indoor Unit Servicing (MVR 350)">Indoor Unit Servicing (MVR 350)</option>
+            <option value="AC Unit Removal (MVR 200)">AC Unit Removal (MVR 200)</option>
+            <option value="Half Gas Refill">Half Gas Refill</option>
+            <option value="Full Gas Refill">Full Gas Refill</option>
             <option value="Repair - Diagnosis Required">Repair - Diagnosis Required</option>
           </select>
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">AC Brand <span class="text-white/50">(Optional)</span></label>
-          <select name="brand" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+          <select name="brand" class="w-full px-4 py-3 rounded-xl outline-none">
             <option value="">Select brand</option>
             <option value="Hitachi">Hitachi</option>
             <option value="AUX">AUX</option>
@@ -600,7 +637,7 @@
         </div>
         <div class="sm:col-span-1">
           <label class="block text-sm mb-1">AC BTU <span class="text-white/50">(Optional)</span></label>
-          <select name="btu" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none">
+          <select name="btu" class="w-full px-4 py-3 rounded-xl outline-none">
             <option value="">Select BTU</option>
             <option value="6000 BTU">6,000 BTU</option>
             <option value="7000 BTU">7,000 BTU</option>
@@ -615,7 +652,7 @@
         </div>
         <div class="sm:col-span-2">
           <label class="block text-sm mb-1">Additional Notes <span class="text-white/50">(Optional)</span></label>
-          <textarea name="notes" rows="3" class="w-full px-4 py-3 rounded-xl bg-white/5 ring-1 ring-white/10 focus:ring-chill-500 outline-none resize-none" placeholder="Describe the issue, specific requirements, or any other details..."></textarea>
+          <textarea name="notes" rows="3" class="w-full px-4 py-3 rounded-xl outline-none resize-none" placeholder="Describe the issue, specific requirements, or any other details..."></textarea>
         </div>
         <div class="sm:col-span-2 flex items-center gap-2">
           <input id="consent" type="checkbox" required class="w-4 h-4" />
