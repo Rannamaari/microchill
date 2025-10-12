@@ -163,29 +163,6 @@
       font-size: 14px;
       z-index: 50;
     }
-    /* Cookie consent banner */
-    .cookie-banner {
-      position: fixed;
-      bottom: 60px;
-      left: 0;
-      right: 0;
-      background: rgba(15, 23, 42, 0.98);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid rgba(59, 130, 246, 0.3);
-      padding: 1rem;
-      z-index: 9999;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-    .cookie-banner.show {
-      transform: translateY(0);
-    }
-    @media (max-width: 640px) {
-      .cookie-banner {
-        padding: 0.75rem;
-        bottom: 50px;
-      }
-    }
   </style>
 
   <!-- Local Business Schema -->
@@ -775,32 +752,6 @@
       }
     });
 
-    // Cookie Consent functionality
-    const cookieBanner = document.getElementById('cookieBanner');
-
-    function showCookieBanner() {
-      cookieBanner.classList.add('show');
-    }
-
-    function acceptCookies() {
-      localStorage.setItem('cookieConsent', 'accepted');
-      cookieBanner.classList.remove('show');
-    }
-
-    function declineCookies() {
-      localStorage.setItem('cookieConsent', 'declined');
-      cookieBanner.classList.remove('show');
-    }
-
-    // Show cookie banner if not answered yet
-    window.addEventListener('load', () => {
-      const cookieConsent = localStorage.getItem('cookieConsent');
-      if (!cookieConsent) {
-        // Show cookie banner after popup delay
-        setTimeout(showCookieBanner, 1500);
-      }
-    });
-
     // Secure Form Submission via Netlify Function
     const form = document.getElementById('bookingForm');
     const alertBox = document.getElementById('alert');
@@ -875,23 +826,6 @@
 
     // Simple notice - no JavaScript needed, always visible
   </script>
-
-  <!-- Cookie Consent Banner -->
-  <div id="cookieBanner" class="cookie-banner">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div class="text-xs sm:text-sm text-white/90 text-center sm:text-left">
-        <span class="font-semibold">🍪 We use cookies</span> to improve your experience. By continuing, you accept our use of cookies.
-      </div>
-      <div class="flex gap-2 sm:gap-3 flex-shrink-0">
-        <button onclick="acceptCookies()" class="px-4 py-2 rounded-lg bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold text-xs sm:text-sm whitespace-nowrap">
-          Accept
-        </button>
-        <button onclick="declineCookies()" class="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/5 text-white text-xs sm:text-sm whitespace-nowrap">
-          Decline
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- Simple Bottom Notice -->
   <div class="simple-notice">
