@@ -155,6 +155,23 @@
       font-size: 14px;
       z-index: 50;
     }
+    /* Cookie consent banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.98);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 1rem;
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .cookie-banner.show {
+      transform: translateY(0);
+    }
   </style>
 
   <!-- Local Business Schema -->
@@ -240,10 +257,10 @@
   </script>
 </head>
 <body class="bg-slate-950 text-white font-sans">
-  <!-- Coming Soon Popup -->
-  <div id="comingSoonPopup" class="popup-overlay">
-    <div class="popup-content">
-      <button class="popup-close" onclick="closePopup()">
+  <!-- Now Open Popup -->
+  <div id="openingPopup" class="popup-overlay">
+    <div class="popup-content" style="max-width: 600px;">
+      <button class="popup-close" onclick="closeOpeningPopup()">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -251,29 +268,48 @@
 
       <div class="text-center">
         <div class="text-6xl mb-4">❄️</div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-chill-300 mb-4">Micro Cool is Coming Soon!</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold text-chill-300 mb-3">We're Officially OPEN!</h2>
+        <p class="text-white/90 mb-4">We're officially open and ready to keep you cool this season. Enjoy special discounted rates on all AC services — from installation to maintenance.</p>
 
-        <div class="space-y-4 text-white/80">
-          <p class="text-lg">We're excited to announce that our professional AC services will be launching soon!</p>
-
-          <div class="p-4 rounded-xl bg-chill-500/20 ring-1 ring-chill-400/30">
-            <div class="text-chill-300 font-semibold text-lg">🗓️ Official Opening</div>
-            <div class="text-xl font-bold mt-1">October 15th, 2025</div>
+        <div class="space-y-3 text-left mb-4">
+          <div class="p-3 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center">
+            <span class="text-white/90">✅ New Installation</span>
+            <span class="text-emerald-300 font-bold">MVR 750</span>
           </div>
-
-          <div class="p-4 rounded-xl bg-orange-500/20 ring-1 ring-orange-400/30">
-            <div class="text-orange-300 font-semibold">🔥 Early Bird Special!</div>
-            <div class="text-sm mt-1">Book now and get exclusive discounts on all services</div>
+          <div class="p-3 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center">
+            <span class="text-white/90">✅ Full AC Service</span>
+            <span class="text-emerald-300 font-bold">MVR 650</span>
           </div>
-
-          <p class="text-sm text-white/70">You can book your service appointment now to secure your slot and receive special launch pricing!</p>
+          <div class="p-3 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center">
+            <span class="text-white/90">✅ Water Leak Fix</span>
+            <span class="text-emerald-300 font-bold">MVR 250</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center">
+            <span class="text-white/90">✅ Relocation / Shift</span>
+            <span class="text-emerald-300 font-bold">MVR 950</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center">
+            <span class="text-white/90">✅ Indoor Unit Servicing</span>
+            <span class="text-emerald-300 font-bold">MVR 350</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center">
+            <span class="text-white/90">✅ AC Unit Removal</span>
+            <span class="text-emerald-300 font-bold">MVR 200</span>
+          </div>
+          <div class="p-3 rounded-xl bg-chill-500/10 ring-1 ring-chill-400/30 text-center">
+            <span class="text-white/90">🧊 Gas fills will be charged as needed</span>
+          </div>
         </div>
 
-        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="#booking" onclick="closePopup()" class="px-6 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold transition-colors">
+        <div class="p-3 rounded-xl bg-orange-500/20 ring-1 ring-orange-400/30 mb-4">
+          <div class="text-orange-300 font-semibold">📅 Limited slots available each day — book early to secure your spot!</div>
+        </div>
+
+        <div class="mt-5 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="#booking" onclick="closeOpeningPopup()" class="px-6 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold transition-colors">
             Book Service Now
           </a>
-          <button onclick="closePopup()" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/5 transition-colors">
+          <button onclick="closeOpeningPopup()" class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/5 transition-colors">
             Continue Browsing
           </button>
         </div>
@@ -692,41 +728,62 @@
       }
     });
 
-    // Coming Soon Popup functionality
-    const popup = document.getElementById('comingSoonPopup');
+    // Opening Popup functionality - shows every time
+    const openingPopup = document.getElementById('openingPopup');
 
-    function showPopup() {
-      popup.classList.add('show');
+    function showOpeningPopup() {
+      openingPopup.classList.add('show');
       document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
 
-    function closePopup() {
-      popup.classList.remove('show');
+    function closeOpeningPopup() {
+      openingPopup.classList.remove('show');
       document.body.style.overflow = 'auto'; // Restore scrolling
-      // Store in localStorage so popup doesn't show again in same session
-      localStorage.setItem('popupShown', 'true');
     }
 
-    // Show popup on page load if not shown before
+    // Show popup on page load every time
     window.addEventListener('load', () => {
-      const popupShown = localStorage.getItem('popupShown');
-      if (!popupShown) {
-        // Delay popup slightly for better UX
-        setTimeout(showPopup, 500);
-      }
+      // Delay popup slightly for better UX
+      setTimeout(showOpeningPopup, 500);
     });
 
     // Close popup when clicking outside content area
-    popup.addEventListener('click', (e) => {
-      if (e.target === popup) {
-        closePopup();
+    openingPopup.addEventListener('click', (e) => {
+      if (e.target === openingPopup) {
+        closeOpeningPopup();
       }
     });
 
     // Close popup with Escape key
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && popup.classList.contains('show')) {
-        closePopup();
+      if (e.key === 'Escape' && openingPopup.classList.contains('show')) {
+        closeOpeningPopup();
+      }
+    });
+
+    // Cookie Consent functionality
+    const cookieBanner = document.getElementById('cookieBanner');
+
+    function showCookieBanner() {
+      cookieBanner.classList.add('show');
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieBanner.classList.remove('show');
+    }
+
+    function declineCookies() {
+      localStorage.setItem('cookieConsent', 'declined');
+      cookieBanner.classList.remove('show');
+    }
+
+    // Show cookie banner if not answered yet
+    window.addEventListener('load', () => {
+      const cookieConsent = localStorage.getItem('cookieConsent');
+      if (!cookieConsent) {
+        // Show cookie banner after popup delay
+        setTimeout(showCookieBanner, 1500);
       }
     });
 
@@ -805,9 +862,26 @@
     // Simple notice - no JavaScript needed, always visible
   </script>
 
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-white/90">
+        <span class="font-semibold">🍪 We use cookies</span> to improve your experience and analyze site traffic. By continuing to use this site, you accept our use of cookies.
+      </div>
+      <div class="flex gap-3">
+        <button onclick="acceptCookies()" class="px-4 py-2 rounded-lg bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold text-sm whitespace-nowrap">
+          Accept
+        </button>
+        <button onclick="declineCookies()" class="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/5 text-white text-sm whitespace-nowrap">
+          Decline
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Simple Bottom Notice -->
   <div class="simple-notice">
-    Opening October 15th, 2025 • Call our hotline: 9996210
+    OPEN NOW • OPENING Hours 0900 AM to 10:00 PM • HOTLINE 9996210
   </div>
 </body>
 </html>
