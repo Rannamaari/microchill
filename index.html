@@ -291,6 +291,31 @@
       .mobile-nav.open {
         transform: translateY(0);
       }
+      /* Light mode mobile menu styles */
+      body.light-mode .mobile-nav {
+        background: rgba(255, 255, 255, 0.95);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      body.light-mode .mobile-nav a {
+        color: #1e293b;
+      }
+      body.light-mode .mobile-nav a:hover {
+        color: #0ea5e9;
+      }
+      body.light-mode .mobile-nav a[href="#booking"] {
+        background: #0ea5e9;
+        color: white;
+      }
+      body.light-mode .mobile-nav a[href="#booking"]:hover {
+        background: #0284c7;
+      }
+      /* Light mode hamburger button */
+      body.light-mode #mobileMenuBtn {
+        color: #1e293b;
+      }
+      body.light-mode #mobileMenuBtn:hover {
+        background: rgba(0, 0, 0, 0.05);
+      }
       /* Popup modal styles */
       .popup-overlay {
         position: fixed;
@@ -682,7 +707,7 @@
               />
             </svg>
           </button>
-          <button id="mobileMenuBtn" class="p-2 rounded-lg hover:bg-white/10">
+          <button id="mobileMenuBtn" class="p-2 rounded-lg hover:bg-white/10 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -708,18 +733,18 @@
       class="mobile-nav fixed top-16 left-0 right-0 z-40 bg-slate-950/95 backdrop-blur border-b border-white/10 sm:hidden"
     >
       <nav class="p-4 space-y-3">
-        <a href="#about" class="block py-2 hover:text-chill-300">About</a>
-        <a href="#pricing" class="block py-2 hover:text-chill-300">Pricing</a>
+        <a href="#about" class="block py-2 text-white hover:text-chill-300">About</a>
+        <a href="#pricing" class="block py-2 text-white hover:text-chill-300">Pricing</a>
         <a
           href="https://garage.micronet.mv"
           target="_blank"
           rel="noopener"
-          class="block py-2 hover:text-chill-300"
+          class="block py-2 text-white hover:text-chill-300"
           >Micro Moto Garage</a
         >
         <a
           href="#booking"
-          class="block py-2 px-3 rounded-lg bg-chill-500 text-slate-900 font-semibold text-center"
+          class="block py-2 px-3 rounded-lg bg-chill-500 text-slate-900 font-semibold text-center hover:bg-chill-400"
           >Book Now</a
         >
       </nav>
@@ -1420,9 +1445,16 @@
         }
       });
 
-      // Secure Form Submission via Netlify Function
+      // Secure Form Submission
       const form = document.getElementById("bookingForm");
       const alertBox = document.getElementById("alert");
+
+      console.log("Form element found:", form);
+      console.log("Alert box found:", alertBox);
+
+      if (!form) {
+        console.error("ERROR: bookingForm element not found!");
+      }
 
       async function submitBooking(formData) {
         // Convert FormData to regular object for JSON
@@ -1453,9 +1485,10 @@
         return response;
       }
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        console.log("Form submit intercepted");
+      if (form) {
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          console.log("Form submit intercepted - event prevented!");
 
         const data = new FormData(form);
 
@@ -1484,7 +1517,12 @@
             "Sorry, something went wrong. Please try again or contact us directly.";
           console.error("Booking submission error:", err);
         }
-      });
+        });
+
+        console.log("Event listener attached successfully!");
+      } else {
+        console.error("CRITICAL: Form element not found, cannot attach event listener!");
+      }
 
       // Simple notice - no JavaScript needed, always visible
     </script>
