@@ -969,7 +969,7 @@
         recaptchaToken: grecaptcha.getResponse()
       };
 
-      const response = await fetch('/functions/submit-booking', {
+      const response = await fetch('/submit-booking.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
