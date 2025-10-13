@@ -68,8 +68,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <!-- Google reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- TailwindCSS CDN (no build needed) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -1242,15 +1240,6 @@
             >
           </div>
 
-          <!-- reCAPTCHA -->
-          <div class="sm:col-span-2 flex justify-center">
-            <div
-              class="g-recaptcha"
-              data-sitekey="6LeFg94rAAAAALdjxsUvHx2y-8FMDTzuSeyRoPul"
-              data-theme="dark"
-            ></div>
-          </div>
-
           <div class="sm:col-span-2">
             <button
               type="submit"
@@ -1451,7 +1440,6 @@
           brand: formData.get("brand"),
           btu: formData.get("btu"),
           notes: formData.get("notes"),
-          recaptchaToken: grecaptcha.getResponse(),
         };
 
         const response = await fetch("/submit-booking.php", {
@@ -1467,16 +1455,6 @@
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
-
-        // Check reCAPTCHA
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-          alertBox.className =
-            "mt-6 p-4 rounded-xl bg-red-500/15 ring-1 ring-red-400/30 text-red-200";
-          alertBox.textContent = "Please complete the reCAPTCHA verification.";
-          alertBox.classList.remove("hidden");
-          return;
-        }
 
         const data = new FormData(form);
 
@@ -1495,7 +1473,6 @@
             alertBox.textContent =
               "Thank you! Your booking request has been sent. We'll contact you to confirm.";
             form.reset();
-            grecaptcha.reset(); // Reset reCAPTCHA after successful submission
           } else {
             throw new Error(result.message || "Failed to send booking request");
           }
@@ -1504,7 +1481,6 @@
             "mt-6 p-4 rounded-xl bg-rose-500/15 ring-1 ring-rose-400/30 text-rose-200";
           alertBox.textContent =
             "Sorry, something went wrong. Please try again or contact us directly.";
-          grecaptcha.reset(); // Reset reCAPTCHA on error so user can retry
           console.error("Booking submission error:", err);
         }
       });

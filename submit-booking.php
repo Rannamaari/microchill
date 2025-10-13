@@ -36,25 +36,6 @@ try {
         throw new Exception('Invalid JSON data');
     }
 
-    // Verify reCAPTCHA
-    $recaptchaSecret = $_ENV['RECAPTCHA_SECRET_KEY'];
-    $recaptchaToken = $formData['recaptchaToken'] ?? '';
-
-    $recaptchaResponse = file_get_contents(
-        'https://www.google.com/recaptcha/api/siteverify?' . http_build_query([
-            'secret' => $recaptchaSecret,
-            'response' => $recaptchaToken
-        ])
-    );
-
-    $recaptchaResult = json_decode($recaptchaResponse, true);
-
-    if (!$recaptchaResult['success']) {
-        http_response_code(400);
-        echo json_encode(['error' => 'reCAPTCHA verification failed']);
-        exit;
-    }
-
     // Build address from components
     $addressParts = array_filter([
         $formData['house'] ?? '',
@@ -75,8 +56,7 @@ try {
         "🔧 Service: " . ($formData['service'] ?? '') . "\n" .
         "❄️ AC Brand: " . ($formData['brand'] ?? 'Not specified') . "\n" .
         "📊 BTU: " . ($formData['btu'] ?? 'Not specified') . "\n" .
-        "📝 Notes: " . ($formData['notes'] ?? 'None') . "\n" .
-        "🛡️ Verified: ✅ Human verified (reCAPTCHA passed)";
+        "📝 Notes: " . ($formData['notes'] ?? 'None');
 
     // Send to Telegram
     $telegramBotToken = $_ENV['TELEGRAM_BOT_TOKEN'];
