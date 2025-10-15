@@ -1514,8 +1514,9 @@
           alertBox.className =
             "mt-6 p-4 rounded-xl bg-rose-500/15 ring-1 ring-rose-400/30 text-rose-200";
           alertBox.textContent =
-            "Sorry, something went wrong. Please try again or contact us directly.";
+            "Error: " + (err.message || "Something went wrong. Please try again or contact us directly.");
           console.error("Booking submission error:", err);
+          console.error("Error details:", err.message);
         }
         });
 
