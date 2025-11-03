@@ -9,7 +9,7 @@
     </title>
     <meta
       name="description"
-      content="Professional AC installation, repair & maintenance in Malé, Hulhumalé & Vilimalé. Same day service, 45 days warranty. New installation MVR 900, Full service MVR 800. Book now!"
+      content="Professional AC installation, repair & maintenance in Malé, Hulhumalé & Vilimalé. Same day service, 45 days warranty. New installation MVR 850, Full service MVR 750. Book now!"
     />
     <meta
       name="keywords"
@@ -309,6 +309,14 @@
       body.light-mode .mobile-nav a[href="#booking"]:hover {
         background: #0284c7;
       }
+      /* Light mode - Micro Moto Garage button */
+      body.light-mode nav a[href="https://garage.micronet.mv"] {
+        background: #dc2626;
+        color: white;
+      }
+      body.light-mode nav a[href="https://garage.micronet.mv"]:hover {
+        background: #b91c1c;
+      }
       /* Light mode hamburger button */
       body.light-mode #mobileMenuBtn {
         color: #1e293b;
@@ -350,6 +358,23 @@
         position: relative;
         transform: scale(0.9) translateY(20px);
         transition: transform 0.3s ease;
+      }
+      /* Light mode popup */
+      body.light-mode .popup-content {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+      }
+      body.light-mode .popup-content h2,
+      body.light-mode .popup-content p,
+      body.light-mode .popup-content span {
+        color: #0f172a !important;
+      }
+      body.light-mode .popup-close {
+        background: rgba(0, 0, 0, 0.1);
+        color: #0f172a;
+      }
+      body.light-mode .popup-close:hover {
+        background: rgba(0, 0, 0, 0.2);
       }
       @media (max-width: 640px) {
         .popup-content {
@@ -448,7 +473,7 @@
                 "@type": "Service",
                 "name": "New AC Installation"
               },
-              "price": "900",
+              "price": "850",
               "priceCurrency": "MVR"
             },
             {
@@ -457,7 +482,7 @@
                 "@type": "Service",
                 "name": "AC Full Service"
               },
-              "price": "800",
+              "price": "750",
               "priceCurrency": "MVR"
             },
             {
@@ -509,13 +534,13 @@
               class="p-2 sm:p-3 rounded-lg bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center text-sm sm:text-base"
             >
               <span class="text-white/90">✅ New Installation</span>
-              <span class="text-emerald-300 font-bold">MVR 750</span>
+              <span class="text-emerald-300 font-bold">MVR 850</span>
             </div>
             <div
               class="p-2 sm:p-3 rounded-lg bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center text-sm sm:text-base"
             >
               <span class="text-white/90">✅ Full AC Service</span>
-              <span class="text-emerald-300 font-bold">MVR 650</span>
+              <span class="text-emerald-300 font-bold">MVR 750</span>
             </div>
             <div
               class="p-2 sm:p-3 rounded-lg bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center text-sm sm:text-base"
@@ -533,13 +558,13 @@
               class="p-2 sm:p-3 rounded-lg bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center text-sm sm:text-base"
             >
               <span class="text-white/90">✅ Indoor Unit Servicing</span>
-              <span class="text-emerald-300 font-bold">MVR 350</span>
+              <span class="text-emerald-300 font-bold">MVR 400</span>
             </div>
             <div
               class="p-2 sm:p-3 rounded-lg bg-emerald-500/10 ring-1 ring-emerald-400/30 flex justify-between items-center text-sm sm:text-base"
             >
               <span class="text-white/90">✅ AC Unit Removal</span>
-              <span class="text-emerald-300 font-bold">MVR 200</span>
+              <span class="text-emerald-300 font-bold">MVR 300</span>
             </div>
             <div
               class="p-2 sm:p-3 rounded-lg bg-chill-500/10 ring-1 ring-chill-400/30 text-center text-sm sm:text-base"
@@ -626,11 +651,12 @@
         <nav class="hidden sm:flex items-center gap-6 text-sm">
           <a href="#about" class="hover:text-chill-300">About</a>
           <a href="#pricing" class="hover:text-chill-300">Pricing</a>
+          <a href="#subscriptions" class="hover:text-chill-300">Subscriptions</a>
           <a
             href="https://garage.micronet.mv"
             target="_blank"
             rel="noopener"
-            class="hover:text-chill-300"
+            class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-semibold"
             >Micro Moto Garage</a
           >
           <a
@@ -743,11 +769,12 @@
       <nav class="p-4 space-y-3">
         <a href="#about" class="block py-2 text-white hover:text-chill-300">About</a>
         <a href="#pricing" class="block py-2 text-white hover:text-chill-300">Pricing</a>
+        <a href="#subscriptions" class="block py-2 text-white hover:text-chill-300">Subscriptions</a>
         <a
           href="https://garage.micronet.mv"
           target="_blank"
           rel="noopener"
-          class="block py-2 text-white hover:text-chill-300"
+          class="block py-2 px-3 rounded-lg bg-red-600 text-white font-semibold text-center hover:bg-red-500"
           >Micro Moto Garage</a
         >
         <a
@@ -910,19 +937,35 @@
           warranty.
         </p>
 
-        <!-- Promotional Banner -->
+        <!-- Pricing Info Banner -->
         <div
-          class="mt-6 p-4 rounded-xl bg-gradient-to-r from-orange-500/20 to-red-500/20 ring-1 ring-orange-400/30"
+          class="mt-6 p-4 rounded-xl bg-gradient-to-r from-chill-500/20 to-blue-500/20 ring-1 ring-chill-400/30"
         >
           <div class="flex items-center gap-3">
-            <div class="text-2xl">🔥</div>
+            <div class="text-2xl">💡</div>
             <div>
-              <div class="text-orange-300 font-semibold">
-                Limited Time Offer!
+              <div class="text-chill-300 font-semibold">
+                Pricing Information
               </div>
               <div class="text-white/80 text-sm">
-                Introductory prices with special discounts available. Call
-                9996210 for current promotions!
+                All prices listed below are for standard AC units (9,000 to 24,000 BTU). Different pricing may apply for larger units. Please contact us for a quote.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Early Booking Discount -->
+        <div
+          class="mt-4 p-4 rounded-xl bg-gradient-to-r from-emerald-500/20 to-green-500/20 ring-1 ring-emerald-400/30"
+        >
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">🎁</div>
+            <div>
+              <div class="text-emerald-300 font-semibold">
+                Early Booking Discount
+              </div>
+              <div class="text-white/80 text-sm">
+                Book 3 days in advance and enjoy a special discount on your service! Call 9996210 to reserve your slot.
               </div>
             </div>
           </div>
@@ -935,10 +978,7 @@
             <div class="text-lg font-semibold text-chill-300">
               New Installation
             </div>
-            <div class="flex items-center gap-3 mt-1">
-              <div class="text-2xl font-bold text-emerald-400">MVR 750</div>
-              <div class="text-lg text-white/40 line-through">MVR 900</div>
-            </div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1">MVR 850</div>
             <div class="text-sm text-white/60 mt-2">
               Complete AC installation with setup
             </div>
@@ -950,10 +990,7 @@
             <div class="text-lg font-semibold text-chill-300">
               AC Full Service
             </div>
-            <div class="flex items-center gap-3 mt-1">
-              <div class="text-2xl font-bold text-emerald-400">MVR 650</div>
-              <div class="text-lg text-white/40 line-through">MVR 800</div>
-            </div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1">MVR 750</div>
             <div class="text-sm text-white/60 mt-2">
               Deep cleaning & maintenance
             </div>
@@ -989,10 +1026,7 @@
             <div class="text-lg font-semibold text-chill-300">
               Indoor Unit Servicing
             </div>
-            <div class="flex items-center gap-3 mt-1">
-              <div class="text-2xl font-bold text-emerald-400">MVR 350</div>
-              <div class="text-lg text-white/40 line-through">MVR 500</div>
-            </div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1">MVR 400</div>
             <div class="text-sm text-white/60 mt-2">
               Indoor unit cleaning only
             </div>
@@ -1004,10 +1038,7 @@
             <div class="text-lg font-semibold text-chill-300">
               AC Unit Removal
             </div>
-            <div class="flex items-center gap-3 mt-1">
-              <div class="text-2xl font-bold text-emerald-400">MVR 200</div>
-              <div class="text-lg text-white/40 line-through">MVR 300</div>
-            </div>
+            <div class="text-2xl font-bold text-emerald-400 mt-1">MVR 300</div>
             <div class="text-sm text-white/60 mt-2">
               Safe removal and disconnection
             </div>
@@ -1015,16 +1046,6 @@
         </div>
 
         <div class="mt-8 space-y-4">
-          <div
-            class="p-4 rounded-xl bg-orange-500/20 ring-1 ring-orange-400/30"
-          >
-            <div class="text-orange-300 font-semibold">
-              ⏰ Promotional Pricing Valid Until December 31, 2025
-            </div>
-            <div class="text-white/80 text-sm mt-1">
-              Book now to secure these special discounted rates!
-            </div>
-          </div>
           <div
             class="p-4 rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20"
           >
@@ -1041,6 +1062,220 @@
             <div class="text-white/60 text-sm">
               * Basic service pricing shown. Additional charges may apply for extra copper pipes, electrical cabling, casing, or enclosure work. We always strive to complete work at minimal cost.
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscription Services -->
+    <section id="subscriptions" class="py-16 sm:py-20 border-t border-white/10 bg-slate-900/40">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center">Monthly Maintenance Subscriptions</h2>
+        <p class="mt-4 text-white/70 text-center leading-relaxed max-w-3xl mx-auto">
+          Perfect for guest houses, offices, and businesses. Keep your AC units running efficiently year-round with our hassle-free monthly maintenance plans.
+        </p>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+          <!-- Guest House Package -->
+          <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-chill-500/10 to-blue-500/10 ring-1 ring-chill-400/30 hover:ring-chill-400/50 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-4xl">🏨</div>
+              <div>
+                <h3 class="text-2xl font-bold text-chill-300">Guest House Package</h3>
+                <p class="text-white/60 text-sm">For hotels & accommodations</p>
+              </div>
+            </div>
+
+            <div class="mt-6 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Regular monthly servicing for all AC units</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Priority response for emergency repairs</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Filter cleaning & replacement</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Performance optimization & energy efficiency checks</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Scheduled maintenance during low occupancy periods</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Discounted rates on repairs & gas refills</div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-white/10">
+              <p class="text-white/60 text-sm mb-4">Custom pricing based on number of units and service frequency</p>
+              <a href="tel:9996210" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                  <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.653.549 1.943 1.351l1.152 3.197c.239.668.065 1.422-.431 1.918l-1.293 1.293c-.32.32-.497.751-.497 1.201v.001c0 .47.176.925.497 1.257l4.5 4.5c.332.321.787.497 1.257.497h.001c.45 0 .881-.177 1.201-.497l1.293-1.293c.496-.496 1.25-.67 1.918-.431l3.197 1.152c.802.29 1.351 1.083 1.351 1.943V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+                </svg>
+                Call for Quote
+              </a>
+            </div>
+          </div>
+
+          <!-- Office Package -->
+          <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 ring-1 ring-purple-400/30 hover:ring-purple-400/50 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-4xl">🏢</div>
+              <div>
+                <h3 class="text-2xl font-bold text-purple-300">Office Package</h3>
+                <p class="text-white/60 text-sm">For businesses & workplaces</p>
+              </div>
+            </div>
+
+            <div class="mt-6 space-y-3">
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Monthly preventive maintenance visits</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">After-hours service available</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Deep cleaning of indoor & outdoor units</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Temperature & airflow optimization</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Quarterly comprehensive system inspection</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-emerald-400 mt-1">✓</div>
+                <div class="text-white/80 text-sm">Priority emergency support & discounted repairs</div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-white/10">
+              <p class="text-white/60 text-sm mb-4">Flexible plans tailored to your office requirements</p>
+              <a href="tel:9996210" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-purple-500 hover:bg-purple-400 text-white font-semibold transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                  <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.653.549 1.943 1.351l1.152 3.197c.239.668.065 1.422-.431 1.918l-1.293 1.293c-.32.32-.497.751-.497 1.201v.001c0 .47.176.925.497 1.257l4.5 4.5c.332.321.787.497 1.257.497h.001c.45 0 .881-.177 1.201-.497l1.293-1.293c.496-.496 1.25-.67 1.918-.431l3.197 1.152c.802.29 1.351 1.083 1.351 1.943V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+                </svg>
+                Call for Quote
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits Banner -->
+        <div class="mt-10 p-6 rounded-xl bg-gradient-to-r from-emerald-500/20 to-green-500/20 ring-1 ring-emerald-400/30">
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-emerald-300 mb-3">Why Choose a Subscription?</h3>
+            <div class="grid sm:grid-cols-3 gap-4 text-sm">
+              <div class="flex flex-col items-center gap-2">
+                <div class="text-2xl">💰</div>
+                <div class="text-white/80">Save up to 30% on regular maintenance costs</div>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <div class="text-2xl">⚡</div>
+                <div class="text-white/80">Reduce energy bills with optimized AC performance</div>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+                <div class="text-2xl">🛡️</div>
+                <div class="text-white/80">Prevent costly breakdowns with regular care</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="mt-8 text-center">
+          <p class="text-white/70 mb-4">
+            Contact us today for a personalized quote and maintenance schedule tailored to your needs.
+          </p>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <a href="tel:9996210" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-chill-500 hover:bg-chill-400 text-slate-900 font-semibold transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.653.549 1.943 1.351l1.152 3.197c.239.668.065 1.422-.431 1.918l-1.293 1.293c-.32.32-.497.751-.497 1.201v.001c0 .47.176.925.497 1.257l4.5 4.5c.332.321.787.497 1.257.497h.001c.45 0 .881-.177 1.201-.497l1.293-1.293c.496-.496 1.25-.67 1.918-.431l3.197 1.152c.802.29 1.351 1.083 1.351 1.943V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+              </svg>
+              Call 9996210
+            </a>
+            <a href="mailto:hello@micronet.mv" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 text-white font-semibold transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+              </svg>
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 sm:py-20 border-t border-white/10">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center">What Our Customers Say</h2>
+        <p class="mt-4 text-white/70 text-center leading-relaxed">
+          Real feedback from satisfied customers across Maldives
+        </p>
+
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Testimonial 1 -->
+          <div class="p-6 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-full bg-chill-500/20 flex items-center justify-center text-chill-300 font-bold text-lg">
+                A
+              </div>
+              <div>
+                <div class="font-semibold text-white">Aisha Mohamed</div>
+                <div class="text-sm text-white/60">Malé</div>
+              </div>
+            </div>
+            <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+            <p class="text-white/80 text-sm leading-relaxed">
+              "Extremely reliable service with fair and honest pricing. They explained everything clearly and didn't try to upsell unnecessary services. Very professional!"
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="p-6 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-full bg-chill-500/20 flex items-center justify-center text-chill-300 font-bold text-lg">
+                H
+              </div>
+              <div>
+                <div class="font-semibold text-white">Hussain Ali</div>
+                <div class="text-sm text-white/60">Hulhumalé</div>
+              </div>
+            </div>
+            <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+            <p class="text-white/80 text-sm leading-relaxed">
+              "Very punctual and professional team. They arrived exactly on time and followed all safety protocols. I felt confident knowing my AC was in good hands!"
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="p-6 rounded-xl bg-white/5 ring-1 ring-white/10 hover:ring-chill-500/30 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-full bg-chill-500/20 flex items-center justify-center text-chill-300 font-bold text-lg">
+                I
+              </div>
+              <div>
+                <div class="font-semibold text-white">Imran Hassan</div>
+                <div class="text-sm text-white/60">Vilimalé</div>
+              </div>
+            </div>
+            <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+            <p class="text-white/80 text-sm leading-relaxed">
+              "Scheduled my appointment 3 days ahead and received a fantastic discount! Great service quality and the technician was very knowledgeable. Highly recommend!"
+            </p>
           </div>
         </div>
       </div>
@@ -1197,11 +1432,11 @@
               class="w-full px-4 py-3 rounded-xl outline-none"
             >
               <option value="">Select service type</option>
-              <option value="New Installation (MVR 750)">
-                New Installation (MVR 750)
+              <option value="New Installation (MVR 850)">
+                New Installation (MVR 850)
               </option>
-              <option value="AC Full Service (MVR 650)">
-                AC Full Service (MVR 650)
+              <option value="AC Full Service (MVR 750)">
+                AC Full Service (MVR 750)
               </option>
               <option value="Water Leak Fix (MVR 250)">
                 Water Leak Fix (MVR 250)
@@ -1209,11 +1444,11 @@
               <option value="Relocation / Shift (MVR 950)">
                 Relocation / Shift (MVR 950)
               </option>
-              <option value="Indoor Unit Servicing (MVR 350)">
-                Indoor Unit Servicing (MVR 350)
+              <option value="Indoor Unit Servicing (MVR 400)">
+                Indoor Unit Servicing (MVR 400)
               </option>
-              <option value="AC Unit Removal (MVR 200)">
-                AC Unit Removal (MVR 200)
+              <option value="AC Unit Removal (MVR 300)">
+                AC Unit Removal (MVR 300)
               </option>
               <option value="Half Gas Refill">Half Gas Refill</option>
               <option value="Full Gas Refill">Full Gas Refill</option>
